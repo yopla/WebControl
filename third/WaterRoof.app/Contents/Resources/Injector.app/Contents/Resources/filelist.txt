@@ -1,0 +1,22 @@
+
+Files installed by Injector:
+/Library/LaunchDaemons/net.waterroof.rules.plist
+/etc/waterroof.sh
+/etc/firewallrules
+/etc/firewallrules_v6
+/etc/nat.conf (only if NAT is enabled)
+
+log files created by the operating system:
+/var/log/ipfw.log (Mac OS X 10.4)
+/var/log/appfirewall.log (Mac OS X 10.5/10.6)
+
+processes launched by Injector:
+/usr/sbin/natd (only if NAT is enabled)
+/usr/libexec/ipfwloggerd (10.4)
+/usr/libexec/ApplicationFirewall/appfwloggerd (10.5)
+/usr/libexec/ApplicationFirewall/socketfilterfw (10.6)
+
+sysctl used for ipfw logging and natd:
+net.inet.ip.fw.verbose
+net.inet.ip.fw.verbose_limit
+net.inet.ip.forwarding 

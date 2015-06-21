@@ -1,0 +1,33 @@
+#!/bin/sh
+
+###########################################################################
+#
+#	fwanalog.sh options for WaterRoof
+#
+###########################################################################
+outdir="./out"
+logformat="ipfw"
+inputfiles_mask="*pf*"
+inputfiles_dir="/var/log"
+# --------- set by waterroof ------------
+inputfiles_mtime="31"		
+# ---------------------------------------
+
+inputfiles=`find $inputfiles_dir -maxdepth 1 -name "$inputfiles_mask" -mtime -$inputfiles_mtime | sort -r`
+# --------- set by waterroof ------------
+onehost=false
+# ---------------------------------------
+sep_hosts=false
+sep_packets=false
+#
+analog="./analog/analog"
+# Full pathname if you need, or "nice analog" if you want to de-priorize it
+date="date"		# should be GNU date or one which can print the timezone.
+grep="grep" 	# should be GNU grep
+egrep="egrep"	# should be GNU egrep
+zegrep="zegrep" # this is just a shellscript on most systems.
+gzcat="gzcat"
+sed="sed"
+perl="perl"
+tcpdump="tcpdump"
+timezone=`$date +%z`

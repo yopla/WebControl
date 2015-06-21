@@ -1,0 +1,89 @@
+Analog is copyright (c) Stephen R. E. Turner and other authors 1995 - 2003.
+This copyright and licence apply to all source code, compiled code,
+documentation, graphics and auxiliary files.
+
+This licence describes the conditions under which you may use, modify and
+distribute version 5.32 of analog ("the program"). If you are unable
+or unwilling to accept these conditions in full, then, notwithstanding the
+conditions in the remainder of this licence, you may not use, modify or
+distribute the program at all. Text in square brackets is intended for
+guidance only and does not form part of the licence in any way.
+[Analog is free software. This licence is designed not to restrict your
+freedom except insofar as is necessary to ensure that the program remains free
+for all. If you want to do something that is against this licence, but within
+the spirit of free software, then let's talk about it.]
+
+Analog includes code from the gd, pcre, png & zlib libraries, and from FreeBSD
+and Apache. These portions of code are also subject to their own copyrights
+and licensing conditions, which can be found in the analog docs directory in
+files with names beginning with "Lic".
+
+1) The program may be used free of charge by any person or organisation to
+   whom it is made available, provided that that person accepts the conditions
+   of this licence.
+   [If you like analog, please consider making a donation towards its
+   development at http://www.analog.cx/donations/ . Thank you.]
+
+2) The program may be copied and distributed by any person or organisation in
+   any way whatsoever, provided that any distribution is accompanied by a copy
+   of all copyright notices and licences pertaining to the program. You may
+   charge for distributing the program, but you must not do anything to
+   suggest to the person to whom it is distributed that analog itself is
+   anything other than free software. Furthermore, you may not charge for
+   distributing a modified version of the program unless the source code for
+   the modified version, or a list of differences between the modified version
+   and the original version, is publicly and freely available in machine
+   readable form.
+   [If you distribute analog with a book or a magazine or something like that,
+   I'd be pleased to receive a copy].
+
+3) You may make a charge for either of the following services, but you must
+   not do anything to suggest to your client that analog itself is anything
+   other than free software. 
+   i) Installing the program on a computer on behalf of a third party;
+  ii) Running the program and providing output from it to a third party.
+   However, you may not charge for these services in connection with a
+   modified version of the program unless the source code for the modified
+   version, or a list of differences between the modified version and the
+   original version, is publicly and freely available in machine readable
+   form.
+
+4) You may modify the program or use part of the source code in another
+   program provided that both of the following conditions are met.
+   i) Any modification in the source code is clearly marked as such;
+  ii) Your program must be licenced at no charge to all third parties under
+      the terms of this licence, with no further conditions attached.
+   You may claim copyright for the parts of the program you have written.
+   Changing the default options in the file anlghead.h and anlghea2.h does not
+   count as modifying the program.
+   [You are encouraged to submit your changes to me for inclusion in
+   subsequent versions of analog. If you wish to use part of the code in a
+   program under another licence, then let's talk about it].
+
+5) No warranty of any sort, expressed or implied, is provided in connection
+   with the program, including, but not limited to, implied warranties of
+   merchantibility or fitness for a particular purpose. Any cost, loss or
+   damage of any sort incurred owing to the malfunction or misuse of the
+   program or the inaccuracy of the documentation or connected with the program
+   in any other way whatsoever is solely the responsibility of the person who
+   incurred the cost, loss or damage. Furthermore, any illegal use of the
+   program is solely the responsibility of the person committing the illegal
+   act. By using this program you accept these responsibilities, and give up
+   any right to seek any damages against the authors in connection with this
+   program. 
+   [You should note that some jurisdictions regulate the collection and
+   processing of data relating to individuals.]
+
+6) I, Stephen Turner, reserve the right to make exceptions to any of these
+   conditions, or alter these conditions, at any time. However, you may always
+   use these conditions instead of any altered version if you prefer.
+   [Note that this licence explicitly applies only to one version of
+   analog. Therefore, if I make new conditions in connection with a future
+   version, you do not then have the right to apply these conditions to that
+   version instead].
+
+                                        Stephen R. E. Turner
+                                        Cambridge, England
+                                        analog-author@lists.isite.net
+                                        http://www.analog.cx/
+                                        23 March 2003

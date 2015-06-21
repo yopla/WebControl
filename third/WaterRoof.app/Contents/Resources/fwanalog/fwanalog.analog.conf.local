@@ -1,0 +1,88 @@
+# Some examples for possible changes - edit and/or uncomment them to activate
+# See http://www.analog.cx/docs/custom.html for more information
+
+# Credits
+HOSTURL http://tud.at/programm/fwanalog/
+HOSTNAME "WaterRoof"
+
+# If you want to exclude blocked packets from some hosts (e.g. your private network)
+# HOSTEXCLUDE 192.168.1.*	
+
+# If you want to include your corporate stylesheet
+# STYLESHEET /style/mycorporationsflashydesign.css
+
+# Change the report order if you want. This is a good order for firewall 
+# logs, I think.
+#REPORTORDER xiuSZo54HhDdWmzvbfPscJpBKknNIEtr               # Analog 4.x
+REPORTORDER xiurSZo5746HhwDdWmQ1zvbfPscJpBKknNIEtlLRMjYy    # Analog 5.x
+
+VHOST ON		# Interface report, you can turn it off if you have only one interface
+SIZE ON			# Blocked packet size - not very interesting in many cases
+BROWSERREP OFF 	# Set to ON if you want the mac addresses reported and your firewall logs it
+
+# Switching on reports for all output files.
+
+#DAILYREP ON	# Set to OFF if you don't want the statistics for the last N days
+#DAYROWS 21	# The last 21 days in the daily report
+
+#QUARTERREP ON	# Quarter-hour-report for the last day(s)
+#QUARTERREPROWS 264	# A full day in the five-minute-report
+
+#FIVEREP ON	# Five-minute-report for the last day(s)
+#FIVEREPROWS 264	# A full day in the five-minute-report
+
+# This is European style, I know. Change if you want to.
+WEEKBEGINSON MONDAY
+
+# I don't want warnings about surpressed reports
+WARNINGS -R
+
+# If you don't want pie charts, uncomment this
+# ALLCHART OFF
+
+# Or deactivate them one by one:
+# HOSTCHART OFF
+# DOMCHART OFF
+# etc.
+
+# Set higher floors so reports don't become too long
+# A FLOOR line consist of the following:
+# {rep}FLOOR {number}{suffix}
+
+# The following variants make sense with fwanalog:
+# Nr	at least N blocks in the report's period
+# N%r	at least N percent of the total blocks in the report's period
+# -Nr	the top N objects (hosts, ports etc.) 
+
+# See the examples above and README for analog => fwanalog mappings
+
+DOMFLOOR  -30R			# Max. 30 top level domains
+SUBDOMFLOOR  -30R		# Max. 30 top level domains
+VHOSTFLOOR 5r			# Interfaces with at least 5 blocked packets
+ORGFLOOR  0.5%r			# Organizations with at least 0.5 % of the blocked packets
+HOSTFLOOR  0.5%r		# Hosts with at least 0.5 % of the blocked packets
+DIRFLOOR 1r				# Each targeted host
+SUBDIRFLOOR -40r		# Max. 40 different blocked packets (per host)
+REFFLOOR -20r			# Top 20 source ports
+BROWREPFLOOR 2r         # MAC Address report: addresses with at least 2 tries
+REQFLOOR 2r				# Blocked port report: two ports
+
+# Expanding large items in the Blocked Packet chart
+# - this has to be customized for your most-blocked IP addresses.
+#DIRCHARTEXPAND  /IPAddress1/,/IPAddress2/
+
+# If old logs are bzip2ed or gzipped, uncompress them using this program
+UNCOMPRESS *.gz,*.Z "zcat"
+UNCOMPRESS *.bz2,*.bz "bzcat"
+
+# Include the config file with lots of rare service definitions if you want
+# CONFIGFILE ./support/well_known_ports.conf
+
+# Uncomment the next line if your firewall logs numeric ICMP types
+DIROUTPUTALIAS REGEXPI:^/(.+)/(ICMP)/(.+)/$	"$1/$2, unknown type $3"
+# /ipaddress/icmp/type => ipaddress/icmp, type
+
+# Uncomment the next line if your firewall logs alphanumeric ICMP types (OpenBSD 3 PF)
+#DIROUTPUTALIAS REGEXPI:^/(.+)/(ICMP)/(.+)/$	"$1/$2, type $3"
+# /ipaddress/icmp/type => ipaddress/icmp, type
+

@@ -1,0 +1,581 @@
+## Language file for analog 5.32. May not work with any other version.
+##
+## Converted from /usr/lib/analog/lang/us24.lng on 2003. ápr. 27., vasárnap, 20.25.52 CEST 
+## by mklangfile.us.sh (from the fwanalog distribution)
+## More info: http://tud.at/programm/fwanalog/
+##
+## This is a language file for analog. Lines beginning with ## are comments.
+## Each language should have one language file in its own character set,
+## and can have an additional one for ASCII (7 bit) output.
+## 
+## If your language doesn't seem to fit into this pattern, explain the problem
+## to me, and I can adjust the source code if necessary.
+##
+## The character set of this language file. Prefix with a * to indicate a
+## multibyte character set: e.g. *ISO-2022-JP
+ISO-8859-1
+## Abbreviations for the day and month names.
+Sun
+Mon
+Tue
+Wed
+Thu
+Fri
+Sat
+Jan
+Feb
+Mar
+Apr
+May
+Jun
+Jul
+Aug
+Sep
+Oct
+Nov
+Dec
+## Next some standard common words.
+## Abbreviation for "week beginning"
+week beg.
+year
+## Quarter of a year
+quarter
+month
+day
+days
+hour
+minute
+minutes
+second
+seconds
+byte
+bytes
+## ?bytes represents kbytes, Mbytes etc.
+?bytes
+blocked packet
+blocked packets
+date
+## This has the right spacing for a column like 23/Mar/98 15:00-15:05
+date        time
+time
+first date
+first time
+last date
+last time
+port/ICMP type
+ports/ICMP types
+host
+hosts
+interface
+interfaces
+blocked packet
+blocked packets
+domain
+domains
+organization
+organizations
+extension
+extensions
+source port
+source ports
+MAC address
+MAC addresses
+OS
+OS's
+## (= operating system, operating systems)
+size
+search term
+search terms
+site
+sites
+log prefix
+log prefixes
+status code
+status codes
+Block statistics of your firewall, created by
+## Prefixes kilo, mega etc. to make kilobytes, megabytes etc.
+kilo
+mega
+giga
+tera
+peta
+exa
+zeta
+yotta
+## Shorter versions of the same prefixes for column headings
+k
+M
+G
+T
+P
+E
+Z
+Y
+## Names for the rows in the Packet Size Report. Note that changing these will
+## NOT change the boundaries! These are just labels for predetermined buckets.
+## They should line up nicely when right-aligned.
+          0
+   1B-  10B
+  11B- 100B
+ 101B-  1kB
+  1kB- 10kB
+ 10kB-100kB
+100kB-  1MB
+  1MB- 10MB
+ 10MB-100MB
+100MB-  1GB
+      > 1GB
+## Now the names of reports
+General Summary
+## The time reports, plus "busiest" strings (at the bottom of each report)
+Yearly Report
+Busiest year:
+Quarterly Report
+Busiest quarter:
+Monthly Report
+Month with the most blocked packets:
+Weekly Report
+Week with the most blocked packets: week beginning
+Daily Summary
+Daily Report
+Day with the most blocked packets:
+Hourly Report
+Hourly Summary
+Hour of the Week Summary
+Hour with the most blocked packets:
+Quarter-Hour Report
+Quarter-Hour Summary
+Quarter-hour with the most blocked packets:
+Five-Minute Report
+Five-Minute Summary
+Five minutes with the most blocked packets:
+## The non-time reports. In each case, we have the name of the report,
+## followed by the type of item in the report, once in the singular and once
+## in the plural. These are used in phrases like "listing ??? with at
+## least 200 blocked packets". (The words higher up are used for column headings and
+## for the "not listed" lines at the bottom of the reports.)
+## Finally we have the gender of this type of object, which can be m, f or n.
+##
+## So for example, in German a blocked packet is Verzeichnis (neuter gender), which
+## was given above. But "listing the top blocked packet" is "Ausgabe des ersten
+## Verzeichnisses" and "listing the top two blocked packets" is "Ausgabe der
+## ersten zwei Verzeichnisse". So here, we would have for the blocked packet report:
+##
+## Verzeichnis-Bericht
+## Verzeichnisses
+## Verzeichnisse
+## n
+##
+## I hope that makes sense!
+Packet Source Host Report
+host
+hosts
+n
+Host Redirection Report
+host
+hosts
+n
+Host Failure Report
+host
+hosts
+n
+Blocked Packet Report
+blocked packet
+blocked packets
+n
+Packet Type Report
+extension
+extensions
+n
+Port/ICMP Type Report
+port/ICMP type
+ports/ICMP types
+n
+Redirection Report
+port/ICMP type
+ports/ICMP types
+n
+Failure Report
+port/ICMP type
+ports/ICMP types
+n
+Source Port Report
+source port
+source ports
+n
+Referring Site Report
+referring site
+referring sites
+n
+Redirected Source Port Report
+source port
+source ports
+n
+Failed Source Port Report
+source port
+source ports
+n
+Search Query Report
+query
+queries
+n
+Search Word Report
+query word
+query words
+n
+Internal Search Query Report
+query
+queries
+n
+Internal Search Word Report
+query word
+query words
+n
+Interface Report
+interface
+interfaces
+n
+Interface Redirection Report
+interface
+interfaces
+n
+Interface Failure Report
+interface
+interfaces
+n
+Log Prefix Report
+log prefix
+log prefixes
+n
+Log Prefix Redirection Report
+log prefix
+log prefixes
+n
+Log Prefix Failure Report
+log prefix
+log prefixes
+n
+MAC Address Summary
+MAC address
+MAC addresses
+n
+MAC Address Report
+MAC address
+MAC addresses
+n
+Operating System Report
+operating system
+operating systems
+n
+Domain Report
+domain
+domains
+n
+Organization Report
+organization
+organizations
+n
+Status Code Report
+status code
+status codes
+n
+Processing Time Report
+Packet Size Report
+## Used at the bottom of the report
+This analysis was produced by
+Running time
+Less than 1
+## Used in the time reports
+Each unit
+represents
+or part thereof
+blocked packet for a page
+blocked packets for pages
+## Used at the bottom of each non-time report: need m, f & n genders
+*
+*
+not listed
+## Used on the pie charts: again need m, f & n genders
+*
+*
+Other
+## Used at the top of the report
+Program started at
+Analyzed blocked packets from
+to
+## Used in the General Summary
+Blocked packets
+Average blocked packets per day
+Blocked packets for pages
+Average blocked packets for pages per day
+Logfile lines without status code
+Failed blocked packets
+Redirected blocked packets
+Requests with informational status code
+Distinct blocked packets
+Distinct hosts blocked
+Corrupt logfile lines
+Unwanted logfile entries (because of a date range, EXCLUDE etc.)
+Size of all dropped packets together
+Average size of dropped packets per day
+Figures in parentheses refer to the
+7-day period ending
+last 7 days
+Go To
+Top
+## Some special phrases for particular reports.
+[unresolved numerical addresses]
+[domain not given]
+[unknown domain]
+[root blocked packet]
+[no blocked packet]
+[no extension]
+[blocked packets]
+Unknown Windows
+Other Unix
+Known robots
+OS unknown
+## Column headings for blocked packets, pages, bytes and number (ie position in list)
+## and percentages and last-7-day versions of these.
+## Should be as short as possible -- abbreviate if necessary.
+## (The ?bytes represents kbytes, Mbytes etc.)
+#blocks
+7-day reqs
+%blocks
+%7-day reqs
+#pages
+7-day pages
+%pages
+%7-day pages
+bytes
+?bytes
+7-day bytes
+7-day ?bytes
+%bytes
+%7-day bytes
+ #
+## Now we need to know how to say "listing the top <whatever>", "listing
+## the top <n> <whatevers>", and "listing <whatevers>". The %s and %d
+## will be replaced by the appropriate things. There may be three of each of
+## these statements, for the genders m, f and n. Any genders that aren't used,
+## you can just put a * there instead. So, for example, French starts
+## Affichage du premier %s
+## Affichage de la premi&egrave;re %s
+## *
+## with entries for m & f, but not n
+*
+*
+Listing the top %s
+*
+*
+Listing the top %d %s
+*
+*
+Listing %s
+## "by" in the phrase "listing the top 3 files BY number of blocked packets"
+by
+## All blocked packets WITH AT LEAST 10 blocked packets
+with at least
+## Different ways of doing floors
+blocked packet in the last 7 days
+blocked packets in the last 7 days
+blocked packet for a page in the last 7 days
+blocked packets for pages in the last 7 days
+redirected blocked packet
+redirected blocked packets
+redirected blocked packet in the last 7 days
+redirected blocked packets in the last 7 days
+failed blocked packet
+failed blocked packets
+failed blocked packet in the last 7 days
+failed blocked packets in the last 7 days
+% of the traffic
+% of the traffic in the last 7 days
+% of the maximum amount of traffic
+% of the maximum amount of traffic in the last 7 days
+byte of traffic
+bytes of traffic
+## ?bytes represents kbytes, Mbytes etc.
+?bytes of traffic
+byte of traffic in the last 7 days
+bytes of traffic in the last 7 days
+?bytes of traffic in the last 7 days
+with a blocked packet since
+with a redirected blocked packet since
+with a failed blocked packet since
+with first blocked packet since
+with first redirected blocked packet since
+with first failed blocked packet since
+## Now "sorted by": again, in m, f & n (only needed in plural though)
+*
+*
+sorted by
+## Used at the top of each report
+This report contains data from
+## Used in pie charts
+The wedges are plotted by
+## different ways of sorting
+the amount of traffic
+the amount of traffic in the last 7 days
+% of the blocked packets
+% of the blocked packets in the last 7 days
+% of the maximum number of blocked packets
+% of the maximum number of blocked packets in the last 7 days
+the number of blocked packets
+the number of blocked packets in the last 7 days
+% of the blocked packets for pages
+% of the blocked packets for pages in the last 7 days
+% of the maximum number of blocked packets for pages
+% of the maximum number of blocked packets for pages in the last 7 days
+the number of blocked packets for pages
+the number of blocked packets for pages in the last 7 days
+% of the redirected blocked packets
+% of the redirected blocked packets in the last 7 days
+% of the maximum number of redirected blocked packets
+% of the maximum number of redirected blocked packets in the last 7 days
+the number of redirected blocked packets
+the number of redirected blocked packets in the last 7 days
+% of the failed blocked packets
+% of the failed blocked packets in the last 7 days
+% of the maximum number of failed blocked packets
+% of the maximum number of failed blocked packets in the last 7 days
+the number of failed blocked packets
+the number of failed blocked packets in the last 7 days
+the time of the last blocked packet
+the time of the last redirected blocked packet
+the time of the last failed blocked packet
+the time of the first blocked packet
+the time of the first redirected blocked packet
+the time of the first failed blocked packet
+## 3 other ways of sorting in m, f, & n
+*
+*
+sorted alphabetically
+*
+*
+sorted numerically
+*
+*
+unsorted
+## The separators to use between thousands, and as a decimal point. For
+## example, English generally uses "3,000.25" so has , and . here. French uses
+## "3 000,25", so has space and , instead.
+,
+.
+## There's a colon here, because the French like to put a space before a colon,
+## so they have space-colon instead here.
+:
+## am and pm in the sense of morning and afternoon.
+AM
+PM
+## Some date formats. E.g. for 9am on 1st January 1997 use
+## %d for date          " 1"
+## %D for 0-padded date "01"
+## %m for month         "Jan"
+## %l for month at end of time interval (where this makes sense)
+## %y for short year    "97"
+## %q for quarter of the year    "1"
+## %Y for long year     "1997"
+## %h for hour in 24-hour clock " 9"
+## %H for 0-padded hour         "09"
+## %j for hour in 12-hour clock " 9"
+## %n for minute        "00"
+## %a for am or pm      "am"
+## %i for hour at end of time interval (where this makes sense)
+## %I for 0-padded hour at end of time interval
+## %k for 12-hour hour at end of time interval
+## %o for minute at end of time interval
+## %b for am or pm at end of time interval
+## %w for weekday       "Wed"
+## %x for a dash in a range e.g. in 14:00-14:15. This is necessary because in
+##    proper typesetting, this should be an en-dash not a regular dash.
+##
+## So for a date, English might have %d/%m/%y for 1/Jan/97, whereas German
+## would have %d.%m %y for 1.Jan 97). Note: the month number is not available
+## because it can produce ambiguous dates.
+##
+## The different date formats are as follows
+## "refer to the 7 days to [date]"
+%m %D %Y %H:%n
+## "Program started at" and "Analysed blocked packets from"
+%w, %m %D %Y %H:%n
+## In Daily Report
+%m/%d/%y
+## In Daily Summary
+%w
+## In Hourly Report
+%m/%d/%y %H:%n%x%I:%o
+## In Hourly Summary
+%h
+## In Hour of the Week Summary
+%w %H:%n%x%I:%o
+## In Quarter-Hour and Five-Minute Reports
+%m/%d/%y %H:%n%x%I:%o
+## In Quarter-Hour and Five-Minute Summaries
+%H:%n%x%I:%o
+## In Weekly Report
+%m/%d/%y
+## In Monthly Report
+%m %Y
+## In Quarterly Report
+%m%x%l %Y
+## An alternative for Quarterly Report: %Y Q%q
+## In Yearly Report
+%Y
+## The date (d) column in non-time reports
+%m/%d/%y
+## The date & time (D) column in non-time reports
+%m/%d/%y %H:%n
+## In non-time reports: "listing files with blocked packets since [date]"
+%m/%d/%y at %H:%n
+## Finally, definitions of the HTTP status codes (see
+## ftp://ftp.isi.edu/in-notes/rfc2616.txt). You're welcome to leave these in
+## English if you think they look better that way.
+100 Continue with blocked packet
+101 Switching protocols
+1xx [Miscellaneous informational]
+200 OK
+201 Created
+202 Accepted for future processing
+203 Non-authoritative information
+204 OK, but nothing to send
+205 Reset document
+206 Partial content
+2xx [Miscellaneous successes]
+300 Multiple documents available
+301 Document moved permanently
+302 Document found elsewhere
+303 See other document
+304 Not modified since last retrieval
+305 Use proxy
+306 Switch proxy
+307 Document moved temporarily
+3xx [Miscellaneous redirections]
+400 Bad blocked packet
+401 Authentication required
+402 Payment required
+403 Access forbidden
+404 Document not found
+405 Method not allowed
+406 Document not acceptable to client
+407 Proxy authentication required
+408 Request timeout
+409 Request conflicts with state of resource
+410 Document gone permanently
+411 Length required
+412 Precondition failed
+413 Request too long
+414 Requested filename too long
+415 Unsupported media type
+416 Requested range not valid
+417 Expectation failed
+4xx [Miscellaneous client/log prefix errors]
+500 Internal server error
+501 Request type not supported
+502 Error at upstream server
+503 Service temporarily unavailable
+504 Gateway timeout
+505 HTTP version not supported
+506 Redirection failed
+5xx [Miscellaneous server errors]
+xxx [Unknown]

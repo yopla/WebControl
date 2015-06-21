@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Interface.js</title>
+
+
+  
+  <script src="scripts/clientside.js"></script>
+  <script src="scripts/comWs.js"></script>
+  <script src="scripts/localOsc.js"></script>
+  <script src="http://127.0.0.1:8081/socket.io/socket.io.js"></script> <!-- en cas d'osc loacal-->
+  
+  <script src="scripts/interface.js"></script>
+  <script src="scripts/zepto.js"></script>
+  
+  <script src="scripts/processing.min.js"></script>
+  <script type="text/javascript" src="scripts/jprocessingjs-0.9.min.js"></script> <!--full screen pour porcessing.js-->
+  
+ <!-- <style>
+  html, body {
+    height: 100%;
+    color:#000;
+    font-family:'Helvetica', sans-serif;
+    overflow:hidden;
+  }
+  .interfacePanel {
+    display:block;
+    width:20%;
+    height:20%;
+    float:left;
+    left:200;
+  }
+  </style>-->
+  
+  <style type="text/css">
+body {
+	margin:0; padding:0;
+	background-color:#E0E0E0;
+	color:#000; font-size:12px;
+	font-family: Arial, Helvetica;
+	overflow:hidden;
+} 
+ .interfacePanel {
+    display:block;
+	position:absolute;
+	top:50px;
+	left:0;
+    width:40%;
+    height:60%;
+    float:left;
+	opacity:0.2; 
+  }
+a { color:#000; }
+.medium { font-size:25px; font-weight:bold; }
+.big { font-size:24px; font-weight:bold; }
+
+.rel { position: relative; }
+
+.carreJaune { position:absolute; top:20px; left:40%; right:10%; height:80%; 
+  padding:15px; background-color:#FFE512; opacity:0.6; 
+}
+.infosJaunes { position:absolute; top:20px; left:40%; right:10%; height:80%; 
+  padding:15px; font-size:25px;
+}
+
+</style>
+  
+  
+</head>
+
+<body>
+
+
+<!--<canvas id="pjs" data-processing-sources="bt.pde"></canvas>
+-->
+
+<script type="application/processing" data-processing-target="pjs">
+int value = 0;
+void setup() {
+//size( $(window).width()/5,$(window).height()/5 );
+jProcessingJS(this, {fullscreen:true, mouseoverlay:false}); // processing peut ecouter la souris même avec un html par desssus ?
+background(125,126,140);
+}
+void draw() {
+  fill(value);
+  rect(width/2.2, height/2.5, 50, 50);
+}
+void mousePressed() {
+ if(gConnection) gConnection.send('btap'); //vers ws serveur
+ change();
+}
+void change(){
+  if(value == 0) {
+    value = 255;
+  } else {
+    value = 0;
+  }
+  socket.emit('message', '/proc'); //vers osc local
+}
+</script>
+<canvas id="pjs"> </canvas>
+
+
+
+<div id='panel' class='interfacePanel'> </div>
+    <script>init();</script>   
+    <script>localOSC(); </script>
+	<script>ws_connect();</script>
+    <script>timeur();</script>
+<p id="demo"></p>
+ 
+      
+<div class="carreJaune"></div>
+      
+<div class="infosJaunes">
+	
+    <form action="scripts/processing-mobile-master/">
+    <button type="submit" formtarget="_blank">Submit to a new window</button>
+</form>
+    
+    <div class="leanback-player-audio" style="width: 50px;">
+           <audio  autoplay="false" controls id="player">
+           <source src="medias/son.mp3"></source>
+           </audio>
+           </div>
+<TABLE BORDER="0">
+<TR>    
+<TD><button onclick="document.getElementById('player').play()">Play</button></TD>
+<TD><button onclick="document.getElementById('player').currentTime = 30.0">ret</button></TD>
+<TD><p onclick="toggleControls();">Toggle</p></TD>
+</TR>
+</TABLE>
+
+<script>
+var audio = document.getElementById("player");
+function toggleControls() {
+  if (audio.hasAttribute("controls")) {
+     audio.removeAttribute("controls")   
+  } else {
+     audio.setAttribute("controls","controls")   
+  }
+}
+</script>
+ 
+<video width="356" height="200" controls poster="full/http/link/to/image/file.png"  >
+<source src="medias/noize.mp4" type="video/mp4" />
+<em>Sorry, your browser doesn't support HTML5 video.</em>
+</video>
+    
+    
+    
+<hr /> 
+Received from an OSC app/device at 3333: <div id="status"></div>
+<hr />
+
+ <button style="width:95;height:65"onClick="socket.emit('message', '/foobar');">Send OSC at 3334</button>
+ <button style="width:95;height:65" onClick="startProc();"> proc </button>
+      
+      <script type="application/javascript">
+	  // js appel processing
+        var processingInstance;
+		function startProc() {
+           
+		   if (!processingInstance) {
+                processingInstance = Processing.getInstanceById('pjs');
+             }
+			 processingInstance.change();
+        }
+		</script>
+    
+    
+    <button style="width:105;height:65;font-size:15px" onclick="scrollWin()">Click me to scroll horizontally!</button><br><br>
+<script>
+function scrollWin() {
+    window.scrollTo(500, 0);
+}
+</script>
+    
+    <!--<h1>jProcessingJS<h1>
+	<h2>A <a href="http://processingjs.org/" target="_blank">ProcessingJS</a> extension, <br />
+		for easy fullscreen and responsive ProcessingJS sketches<br />
+		with mouse/touch interactions even with an html overlay !</h2>
+	<h2>More on <a href="https://github.com/GildasP/jProcessingJS">GitHub</a> / 
+	<a href="http://playingwithpixels.gildasp.fr/?p=593">blog post</a></h2>
+    -->
+</div>
+      
+      
+      
+</body>
+
+</html>
